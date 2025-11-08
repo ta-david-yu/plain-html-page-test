@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sectioned GIF Layout</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --fg: #f1f5f9;
+        --accent: #3b82f6;
+        --card-bg: #1e293b;
+        --radius: 12px;
+        --gap: 20px;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        width: 100%;
+        max-width: 900px;
+        margin-bottom: 60px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+      }
+
+      .block {
+        display: flex;
+        align-items: center;
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: var(--gap);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      }
+
+      .block img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .block .text {
+        padding: 20px;
+        flex: 1;
+      }
+
+      .block .text h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+      }
+
+      .block .text p {
+        margin: 0;
+        color: #cbd5e1;
+      }
+
+      /* Responsive: stack on mobile */
+      @media (max-width: 600px) {
+        .block {
+          flex-direction: column;
+          text-align: center;
+        }
+        .block img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Section 1 -->
+    <section>
+      <h2>Funny Animals</h2>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+          alt="Funny cat"
+        />
+        <div class="text">
+          <h3>Playful Cat</h3>
+          <p>
+            This little cat just discovered a laser pointer and can’t get enough
+            of it.
+          </p>
+        </div>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
+          alt="Excited dog"
+        />
+        <div class="text">
+          <h3>Happy Dog</h3>
+          <p>Nothing says joy like a dog jumping around in slow motion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>Nature Moments</h2>
+
+      <div class="block">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
+          alt="Earth rotating"
+        />
+        <div class="text">
+          <h3>Our Planet</h3>
+          <p>
+            A mesmerizing rotation of Earth from space — peaceful and endless.
+          </p>
+        </div>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
+          alt="Penguin dance"
+        />
+        <div class="text">
+          <h3>Penguin Groove</h3>
+          <p>These penguins are having a dance-off on the ice.</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
+          alt="Penguin dance"
+        />
+        <div class="text">
+          <h3>Penguin Groove</h3>
+          <p>These penguins are having a dance-off on the ice.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
