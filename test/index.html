@@ -41,8 +41,9 @@
       }
 
       .block {
+        position: relative; /* anchor for absolute link */
         display: flex;
-        align-items: center;
+        align-items: flex-start; /* align text to top */
         background: var(--card-bg);
         border-radius: var(--radius);
         overflow: hidden;
@@ -58,7 +59,7 @@
       }
 
       .block .text {
-        padding: 20px;
+        padding: 20px 30px; /* reserve space only for text area, not full block */
         flex: 1;
       }
 
@@ -73,6 +74,20 @@
         color: #cbd5e1;
       }
 
+      .block a.more-link {
+        position: absolute;
+        bottom: 10px;
+        right: 16px;
+        font-size: 0.9rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .block a.more-link:hover {
+        text-decoration: underline;
+      }
+
       /* Responsive: stack on mobile */
       @media (max-width: 600px) {
         .block {
@@ -83,14 +98,29 @@
           width: 100%;
           height: auto;
         }
+        .block .text {
+          padding: 20px 20px 60px;
+          font-size: 1rem;
+        }
+        .block a.more-link {
+          position: absolute;
+          font-size: 1rem;
+          bottom: 16px;
+          right: 20px;
+        }
       }
     </style>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <!-- Section 1 -->
     <section>
-      <h2>Funny Animals</h2>
-
+      <h2>My Projects – Projects I was involved in from start to finish</h2>
+      <test>
+        <p>
+          This little cat just discovered a laser pointer
+        </p>
+      </test>
       <div class="block">
         <img
           src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
@@ -100,60 +130,14 @@
           <h3>Playful Cat</h3>
           <p>
             This little cat just discovered a laser pointer and can’t get enough
-            of it.
+            of it. This little cat just discovered a laser pointer and can’t get
+            enough of it. This little cat just discovered a laser pointer and
+            can’t get enough of it. This little cat just discovered a laser
+            pointer and can’t get enough of it. This little cat just discovered
+            a laser pointer and can’t get enough of it.
           </p>
         </div>
-      </div>
-
-      <div class="block">
-        <img
-          src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
-          alt="Excited dog"
-        />
-        <div class="text">
-          <h3>Happy Dog</h3>
-          <p>Nothing says joy like a dog jumping around in slow motion.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2 -->
-    <section>
-      <h2>Nature Moments</h2>
-
-      <div class="block">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
-          alt="Earth rotating"
-        />
-        <div class="text">
-          <h3>Our Planet</h3>
-          <p>
-            A mesmerizing rotation of Earth from space — peaceful and endless.
-          </p>
-        </div>
-      </div>
-
-      <div class="block">
-        <img
-          src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
-          alt="Penguin dance"
-        />
-        <div class="text">
-          <h3>Penguin Groove</h3>
-          <p>These penguins are having a dance-off on the ice.</p>
-        </div>
-      </div>
-
-      <div class="block">
-        <img
-          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
-          alt="Penguin dance"
-        />
-        <div class="text">
-          <h3>Penguin Groove</h3>
-          <p>These penguins are having a dance-off on the ice.</p>
-        </div>
+        <a href="cat-details.html" class="more-link">See more...</a>
       </div>
     </section>
   </body>

@@ -2,173 +2,192 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Two Image Grid Sections (Equal Gaps)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sectioned GIF Layout</title>
     <style>
       :root {
-        --gap: 16px;
-        --tile-size: 180px;
         --bg: #0f172a;
-        --card-bg: #0b1220;
+        --fg: #f1f5f9;
+        --accent: #3b82f6;
+        --card-bg: #1e293b;
+        --radius: 12px;
+        --gap: 20px;
       }
 
-      html,
-      body {
-        height: 100%;
-      }
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto,
-          "Helvetica Neue", Arial;
-        background: linear-gradient(180deg, var(--bg), #021027 80%);
-        color: #e6eef8;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+        padding: 40px 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 32px 16px;
-        gap: 64px;
       }
 
-      .section {
+      section {
         width: 100%;
-        max-width: 1100px;
+        max-width: 900px;
+        margin-bottom: 60px;
       }
 
-      h1,
       h2 {
-        margin: 0 0 16px 0;
-        font-weight: 600;
-        text-align: center;
+        font-size: 1.6rem;
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 8px;
+        margin-bottom: 24px;
       }
 
-      h1 {
-        font-size: 22px;
-      }
-      h2 {
-        font-size: 20px;
-        color: #c4d3f9;
-      }
-
-      /* Grid layout — equal spacing both ways */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(var(--tile-size), 1fr));
-        gap: var(--gap);
-      }
-
-      .tile {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* ensures perfect squares */
+      .block {
+        position: relative; /* anchor for absolute link */
+        display: flex;
+        align-items: flex-start; /* align text to top */
         background: var(--card-bg);
-        border-radius: 10px;
+        border-radius: var(--radius);
         overflow: hidden;
-        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
-        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        margin-bottom: var(--gap);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
       }
 
-      .tile:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-      }
-
-      .tile img {
-        width: 100%;
-        height: 100%;
+      .block img {
+        width: 200px;
+        height: 200px;
         object-fit: cover;
-        display: block;
+        flex-shrink: 0;
       }
 
-      @media (max-width: 480px) {
-        :root {
-          --tile-size: 140px;
+      .block .text {
+        padding: 20px 30px; /* reserve space only for text area, not full block */
+        flex: 1;
+      }
+
+      .block .text h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+      }
+
+      .block .text p {
+        margin: 0;
+        color: #cbd5e1;
+      }
+
+      .block a.more-link {
+        position: absolute;
+        bottom: 10px;
+        right: 16px;
+        font-size: 0.9rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .block a.more-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive: stack on mobile */
+      @media (max-width: 600px) {
+        .block {
+          flex-direction: column;
+          text-align: center;
+        }
+        .block img {
+          width: 100%;
+          height: auto;
+        }
+        .block .text {
+          padding: 20px 20px 60px;
+          font-size: 1rem;
+        }
+        .block a.more-link {
+          position: absolute;
+          font-size: 1rem;
+          bottom: 16px;
+          right: 20px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Section 1: GIF Grid -->
-    <section class="section">
-      <h1>Animated GIF Gallery</h1>
-      <div class="grid">
-        <div class="tile">
-          <img
-            src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
-            alt="Happy animation"
-          />
+    <!-- Section 1 -->
+    <section>
+      <h2>My Projects – Projects I was involved in from start to finish</h2>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+          alt="Funny cat"
+        />
+        <div class="text">
+          <h3>Playful Cat</h3>
+          <p>
+            This little cat just discovered a laser pointer and can’t get enough
+            of it. This little cat just discovered a laser pointer and can’t get
+            enough of it. This little cat just discovered a laser pointer and
+            can’t get enough of it. This little cat just discovered a laser
+            pointer and can’t get enough of it. This little cat just discovered
+            a laser pointer and can’t get enough of it.
+          </p>
         </div>
-        <div class="tile">
-          <img
-            src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-            alt="Excited cat"
-          />
+        <a href="cat-details.html" class="more-link">See more...</a>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
+          alt="Excited dog"
+        />
+        <div class="text">
+          <h3>Happy Dog</h3>
+          <p>Nothing says joy like a dog jumping around in slow motion.</p>
         </div>
-        <div class="tile">
-          <img
-            src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
-            alt="Funny dog"
-          />
-        </div>
-        <div class="tile">
-          <img
-            src="https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif"
-            alt="Pixel art animation"
-          />
-        </div>
-        <div class="tile">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
-            alt="Rotating Earth"
-          />
-        </div>
-        <div class="tile">
-          <img
-            src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
-            alt="Dancing penguin"
-          />
-        </div>
+        <a href="dog-details.html" class="more-link">See more...</a>
       </div>
     </section>
 
-    <!-- Section 2: Static Image Grid -->
-    <section class="section">
-      <h2>Photo Gallery</h2>
-      <div class="grid">
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-            alt="Mountain landscape"
-          />
+    <!-- Section 2 -->
+    <section>
+      <h2>Other Projects – Projects I contributed to</h2>
+
+      <div class="block">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
+          alt="Earth rotating"
+        />
+        <div class="text">
+          <h3>Our Planet</h3>
+          <p>
+            A mesmerizing rotation of Earth from space — peaceful and endless.
+          </p>
         </div>
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
-            alt="Ocean waves"
-          />
+        <a href="earth-details.html" class="more-link">See more...</a>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
+          alt="Penguin dance"
+        />
+        <div class="text">
+          <h3>Penguin Groove</h3>
+          <p>These penguins are having a dance-off on the ice.</p>
         </div>
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=80"
-            alt="City skyline"
-          />
+        <a href="penguin-details.html" class="more-link">See more...</a>
+      </div>
+
+      <div class="block">
+        <img
+          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
+          alt="Aurora night"
+        />
+        <div class="text">
+          <h3>Arctic Lights</h3>
+          <p>The aurora dances gracefully over the frozen tundra at night.</p>
         </div>
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
-            alt="Forest"
-          />
-        </div>
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80"
-            alt="Desert dunes"
-          />
-        </div>
-        <div class="tile">
-          <img
-            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
-            alt="Aurora sky"
-          />
-        </div>
+        <a href="aurora-details.html" class="more-link">See more...</a>
       </div>
     </section>
   </body>
