@@ -4,191 +4,144 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sectioned GIF Layout</title>
-    <style>
-      :root {
-        --bg: #0f172a;
-        --fg: #f1f5f9;
-        --accent: #3b82f6;
-        --card-bg: #1e293b;
-        --radius: 12px;
-        --gap: 20px;
-      }
-
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.6;
-        padding: 40px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      section {
-        width: 100%;
-        max-width: 900px;
-        margin-bottom: 60px;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-        color: var(--accent);
-        border-bottom: 2px solid var(--accent);
-        padding-bottom: 8px;
-        margin-bottom: 24px;
-      }
-
-      .block {
-        position: relative; /* anchor for absolute link */
-        display: flex;
-        align-items: flex-start; /* align text to top */
-        background: var(--card-bg);
-        border-radius: var(--radius);
-        overflow: hidden;
-        margin-bottom: var(--gap);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-      }
-
-      .block img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        flex-shrink: 0;
-      }
-
-      .block .text {
-        padding: 20px 30px; /* reserve space only for text area, not full block */
-        flex: 1;
-      }
-
-      .block .text h3 {
-        margin-top: 0;
-        margin-bottom: 8px;
-        font-size: 1.2rem;
-      }
-
-      .block .text p {
-        margin: 0;
-        color: #cbd5e1;
-      }
-
-      .block a.more-link {
-        position: absolute;
-        bottom: 10px;
-        right: 16px;
-        font-size: 0.9rem;
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .block a.more-link:hover {
-        text-decoration: underline;
-      }
-
-      /* Responsive: stack on mobile */
-      @media (max-width: 600px) {
-        .block {
-          flex-direction: column;
-          text-align: center;
-        }
-        .block img {
-          width: 100%;
-          height: auto;
-        }
-        .block .text {
-          padding: 20px 20px 60px;
-          font-size: 1rem;
-        }
-        .block a.more-link {
-          position: absolute;
-          font-size: 1rem;
-          bottom: 16px;
-          right: 20px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Section 1 -->
-    <section>
-      <h2>My Projects – Projects I was involved in from start to finish</h2>
-
-      <div class="block">
-        <img
-          src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
-          alt="Funny cat"
-        />
-        <div class="text">
-          <h3>Playful Cat</h3>
-          <p>
-            This little cat just discovered a laser pointer and can’t get enough
-            of it. This little cat just discovered a laser pointer and can’t get
-            enough of it. This little cat just discovered a laser pointer and
-            can’t get enough of it. This little cat just discovered a laser
-            pointer and can’t get enough of it. This little cat just discovered
-            a laser pointer and can’t get enough of it.
-          </p>
-        </div>
-        <a href="cat-details.html" class="more-link">See more...</a>
+    <titleBody>
+      <h1>Ta David Yu</h1>
+      <div>
+        <a href="https://x.com/TaDavidYu">twitter</a> - 
+        <a href="https://www.linkedin.com/in/ta-david-yu/">linkedin</a> -
+        <a href="./download/TaDavidYu_GameProgrammer_CV (2025_02_09_00).pdf">resume (2025.02.09)</a>
       </div>
+      <p>
+        I make games. I make tools to make games. I make engines for fun. Sometimes I also do art.<br>
+        Currently working as a tools programmer and Unity developer at Lucas-Nülle GmbH.<br>
+        C++, Odin, C#, TypeScript<br>
+      </p>
+    </titleBody>
 
-      <div class="block">
-        <img
-          src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
-          alt="Excited dog"
-        />
-        <div class="text">
-          <h3>Happy Dog</h3>
-          <p>Nothing says joy like a dog jumping around in slow motion.</p>
+    <sectionBody>
+      <!-- Projects Developed -->
+      <section>
+        <h2>My Projects – Projects I was involved in from start to finish</h2>
+        <div class="block">
+          <img
+            src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif"
+            alt="Funny cat"
+          />
+          <div class="text">
+            <h3>Playful Cat</h3>
+            <p>
+              This little cat just discovered a laser pointer and can’t get
+              enough of it. This little cat just discovered a laser pointer and
+              can’t get enough of it. This little cat just discovered a laser
+              pointer and can’t get enough of it. This little cat just
+              discovered a laser pointer and can’t get enough of it. This little
+              cat just discovered a laser pointer and can’t get enough of it.
+            </p>
+          </div>
+          <a href="cat-details.html" class="more-link">See more...</a>
         </div>
-        <a href="dog-details.html" class="more-link">See more...</a>
-      </div>
-    </section>
-
-    <!-- Section 2 -->
-    <section>
-      <h2>Other Projects – Projects I contributed to</h2>
-
-      <div class="block">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
-          alt="Earth rotating"
-        />
-        <div class="text">
-          <h3>Our Planet</h3>
-          <p>
-            A mesmerizing rotation of Earth from space — peaceful and endless.
-          </p>
+        <div class="block">
+          <img
+            src="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
+            alt="Excited dog"
+          />
+          <div class="text">
+            <h3>Happy Dog</h3>
+            <p>Nothing says joy like a dog jumping around in slow motion.</p>
+          </div>
+          <a href="dog-details.html" class="more-link">See more...</a>
         </div>
-        <a href="earth-details.html" class="more-link">See more...</a>
-      </div>
+      </section>
 
-      <div class="block">
-        <img
-          src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
-          alt="Penguin dance"
-        />
-        <div class="text">
-          <h3>Penguin Groove</h3>
-          <p>These penguins are having a dance-off on the ice.</p>
-        </div>
-        <a href="penguin-details.html" class="more-link">See more...</a>
-      </div>
+      <!-- Projects Contributed -->
+      <section>
+        <h2>Other Projects – Projects I contributed to</h2>
 
-      <div class="block">
-        <img
-          src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
-          alt="Aurora night"
-        />
-        <div class="text">
-          <h3>Arctic Lights</h3>
-          <p>The aurora dances gracefully over the frozen tundra at night.</p>
+        <div class="block">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
+            alt="Earth rotating"
+          />
+          <div class="text">
+            <h3>Our Planet</h3>
+            <p>
+              A mesmerizing rotation of Earth from space — peaceful and endless.
+            </p>
+          </div>
+          <a href="earth-details.html" class="more-link">See more...</a>
         </div>
-        <a href="aurora-details.html" class="more-link">See more...</a>
-      </div>
-    </section>
+
+        <div class="block">
+          <img
+            src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
+            alt="Penguin dance"
+          />
+          <div class="text">
+            <h3>Penguin Groove</h3>
+            <p>These penguins are having a dance-off on the ice.</p>
+          </div>
+          <a href="penguin-details.html" class="more-link">See more...</a>
+        </div>
+
+        <div class="block">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
+            alt="Aurora night"
+          />
+          <div class="text">
+            <h3>Arctic Lights</h3>
+            <p>The aurora dances gracefully over the frozen tundra at night.</p>
+          </div>
+          <a href="aurora-details.html" class="more-link">See more...</a>
+        </div>
+      </section>
+
+      <!-- Tiny Stuff -->
+      <section>
+        <h2>Other Projects – Projects I contributed to</h2>
+
+        <div class="block">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_(large).gif"
+            alt="Earth rotating"
+          />
+          <div class="text">
+            <h3>Our Planet</h3>
+            <p>
+              A mesmerizing rotation of Earth from space — peaceful and endless.
+            </p>
+          </div>
+          <a href="earth-details.html" class="more-link">See more...</a>
+        </div>
+
+        <div class="block">
+          <img
+            src="https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif"
+            alt="Penguin dance"
+          />
+          <div class="text">
+            <h3>Penguin Groove</h3>
+            <p>These penguins are having a dance-off on the ice.</p>
+          </div>
+          <a href="penguin-details.html" class="more-link">See more...</a>
+        </div>
+
+        <div class="block">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
+            alt="Aurora night"
+          />
+          <div class="text">
+            <h3>Arctic Lights</h3>
+            <p>The aurora dances gracefully over the frozen tundra at night.</p>
+          </div>
+          <a href="aurora-details.html" class="more-link">See more...</a>
+        </div>
+      </section>
+
+    </sectionBody>
   </body>
 </html>
