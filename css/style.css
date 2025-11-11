@@ -10,8 +10,8 @@
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url("fonts/Roboto/Roboto-Regular.ttf"),
+  font-family: "Roboto";
+  src: url("fonts/Roboto/Roboto-Regular.ttf");
 }
 
 body {
@@ -148,4 +148,58 @@ section h2 {
     bottom: 16px;
     right: 20px;
   }
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.image-card {
+  position: relative;
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.image-card .label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* stack vertically on mobile */
+@media (max-width: 600px) {
+  .image-card {
+    width: 100%;
+  }
+}
+
+footer {
+  font-size: 12px;
 }
